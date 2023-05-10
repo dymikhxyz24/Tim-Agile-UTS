@@ -222,6 +222,11 @@ btnEquals = Button(calc, text="=", width=6, height=2, bg='#B63A66', fg='white', 
 lblDisplay = Label(calc, text = "Scientific Calculator", font=('Helvetica',30,'bold'), bg='black', fg='white', padx=20, pady=10, justify=CENTER)
 lblDisplay.grid(row=0, column= 4, columnspan=4)
 
+def Scientific():
+    root.title("Scientific Calculator")
+    root.resizable(width=False, height=False)
+    root.geometry("964x568+0+0")
+
 def Standard():
     root.resizable(width=False, height=False)
     root.geometry("480x568+0+0")
@@ -231,7 +236,7 @@ menubar = Menu(calc)
 filemenu = Menu(menubar, tearoff = 0)
 menubar.add_cascade(label = 'Mode', menu = filemenu)
 filemenu.add_command(label = "Standard", command = Standard)
-
+filemenu.add_command(label = "Scientific", command = Scientific)
 
 root.config(menu=menubar)
 root.mainloop()
